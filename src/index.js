@@ -25,7 +25,6 @@ window.onload = function() {
         let tempMax = data.main.temp_max;
         let tempMin = data.main.temp_min;
         let meteo = data.weather[0].description;
-        
         temp = parseInt(temp) - 273.15;
         temp = temp.toFixed(1);
         tempMax = parseInt(tempMax) - 273.15;
