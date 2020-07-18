@@ -21,19 +21,19 @@ window.onload = function() {
       request.open('GET',uri,true);
       request.onload = function(){
         let data = JSON.parse(this.response);
+        let temp = data.main.temp;
+        let tempMax = data.main.temp_max;
+        let tempMin = data.main.temp_min;
+        let meteo = data.weather[0].description;
         
-        let temp= data.main.temp;
-        console.log(data);
-        let meteo = data.weather[0].main;
-        temp = parseInt(temp) - 273;
-        let output = document.getElementById('output').innerHTML= " In " + city + ": " + meteo + " -- " + temp + "°C "
-      
+        temp = parseInt(temp) - 273.15;
+        temp = temp.toFixed(1);
+        tempMax = parseInt(tempMax) - 273.15;
+        tempMax = tempMax.toFixed(1);
+        tempMin = parseInt(tempMin) - 273.15;
+        tempMin = tempMin.toFixed(1);
+        let output = document.getElementById('output').innerHTML =  meteo + " | " + temp + "°C "
+        let outputTwo = document.getElementById('output-two').innerHTML = " Max" + ": " + tempMax + "°C " + " | " + " Min" + ": " + tempMin + "°C " 
       }
       request.send()
       }
-
-      let options = {
-          enableHighAccuracy: true,
-          timeout: 5000,
-          maximumAge: 0
-      };

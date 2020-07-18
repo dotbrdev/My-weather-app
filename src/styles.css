@@ -66,3 +66,13 @@ input{
   max-width: 100%;
   font-size: 14px;
 }
+
+#output {
+  margin-bottom: -15px;
+}
+
+#output:first-letter {
+
+  text-transform: uppercase;
+  
+  }
