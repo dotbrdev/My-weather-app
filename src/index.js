@@ -16,7 +16,6 @@ window.onload = function() {
       let apiKey ='d420b84213167c93636ac51327537114';
       let city = document.getElementById('city').value;
       let uri ='http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+apiKey;
-    
       let request = new XMLHttpRequest();
       request.open('GET',uri,true);
       request.onload = function(){
@@ -31,7 +30,8 @@ window.onload = function() {
         tempMax = tempMax.toFixed(1);
         tempMin = parseInt(tempMin) - 273.15;
         tempMin = tempMin.toFixed(1);
-        let output = document.getElementById('output').innerHTML =  meteo + " | " + temp + "°C "
+        let output = document.getElementById('output').innerHTML =  meteo  
+        let output1 = document.getElementById('output1').innerHTML =  temp + "°C "
         let outputTwo = document.getElementById('output-two').innerHTML = " Max" + ": " + tempMax + "°C " + " | " + " Min" + ": " + tempMin + "°C " 
       }
       request.send()
