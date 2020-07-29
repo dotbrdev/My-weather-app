@@ -1,6 +1,6 @@
 # my-weather-app
 
-Empty project.
+A simple weather-web-app. I was developed for a jr. frontend course and test the API.
 
 ## Building and running on localhost
 
